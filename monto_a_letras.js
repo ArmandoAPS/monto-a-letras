@@ -18,7 +18,7 @@ var DIEZ = 10; var CIEN = 100; var MIL = 1000; var MILLON = 1000000;
 //end data
 
 //function
-function monto_a_letra(monto) {
+function monto_a_letras(monto) {
     if(monto <= CIEN) {
         if(monto <= DIEZ * 2)
             return UNIDADES[monto];
@@ -31,21 +31,21 @@ function monto_a_letra(monto) {
     else if(monto <= MIL) {
         d = Math.floor(monto / CIEN);
         r = monto - d * CIEN;
-        return CENTENAS[d] + " " + (r > 0 ? monto_a_letra(r) : "");
+        return CENTENAS[d] + " " + (r > 0 ? monto_a_letras(r) : "");
     }
     else if(monto < MILLON) {
         d = Math.floor(monto / MIL)
         r = monto - d * MIL;
-        return monto_a_letra(d) + " mil " + (r > 0 ? monto_a_letra(r) : "");
+        return monto_a_letras(d) + " mil " + (r > 0 ? monto_a_letras(r) : "");
     }
     else {
         d = Math.floor(monto / MILLON);
         r = monto - d * MILLON;
         if(d == 1)
-            return "un millón " + (r > 0 ? monto_a_letra(r) : "");
+            return "un millón " + (r > 0 ? monto_a_letras(r) : "");
         else
-            return monto_a_letra(d) + " millones " + ( r > 0 ? monto_a_letra(r) : "");
+            return monto_a_letras(d) + " millones " + ( r > 0 ? monto_a_letras(r) : "");
     }
 }
 //test
-console.log(monto_a_letra(9999999));
+console.log(monto_a_letras(9999999));
