@@ -20,7 +20,7 @@ MILLON = 1000000
 #end data
 
 #function
-def monto_a_letra(monto):
+def monto_a_letras(monto):
     if(monto <= CIEN):
         if(monto <= DIEZ * 2):
             return UNIDADES[monto]
@@ -31,22 +31,22 @@ def monto_a_letra(monto):
     elif(monto <= MIL):
         d = monto // CIEN
         r = monto - d * CIEN
-        return CENTENAS[d] +  (" " + monto_a_letra(r) if r > 0 else "")
+        return CENTENAS[d] +  (" " + monto_a_letras(r) if r > 0 else "")
     elif(monto < MILLON):
         d = monto // MIL
         r = monto - d * MIL
-        return monto_a_letra(d) + " mil " +  (" " + monto_a_letra(r) if r > 0 else "")
+        return monto_a_letras(d) + " mil " +  (" " + monto_a_letras(r) if r > 0 else "")
     else:
         d = monto // MILLON
         r = monto - d * MILLON
         if(d == 1):
-            return "un millón " + (monto_a_letra(r) if r > 0 else "")
+            return "un millón " + (monto_a_letras(r) if r > 0 else "")
         else:
-            return monto_a_letra(d) + " millones " + (monto_a_letra(r) if r > 0 else "")
+            return monto_a_letras(d) + " millones " + (monto_a_letras(r) if r > 0 else "")
 #end function
 
 
 #test
-print(monto_a_letra(9999999))
+print(monto_a_letras(9999999))
     
 
