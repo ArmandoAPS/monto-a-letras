@@ -3,16 +3,16 @@
 # a letras menores al billón
 
 #data
-UNIDADES=["","uno","dos","tres","cuatro","cinco",
+UNIDADES=("","uno","dos","tres","cuatro","cinco",
     "seis","siete","ocho","nueve","diez",
-    "once","doce","trece","catorce","quince",\
+    "once","doce","trece","catorce","quince",
     "diesiseis","diesisiete","diesiocho","diesinueve",
     "veinte","treinta","cuarenta","cincuenta","sesenta",
-    "setenta","ochenta","noventa","cien"]
+    "setenta","ochenta","noventa","cien")
 
-CENTENAS = ["cien","ciento","doscientos","trescientos","cuatrocientos",
+CENTENAS = ("cien","ciento","doscientos","trescientos","cuatrocientos",
     "quinientos","seiscientos","setecientos","ochocientos",
-    "novecientos","mil"]
+    "novecientos","mil")
 DIEZ = 10
 CIEN = 100
 MIL = 1000
